@@ -8,6 +8,7 @@ using RestSharp;
 
 namespace GoogleDistanceMatrix.Clients
 {
+
     public class GoogleDistanceMatrixClient : RestApiClient
     {
         private const string baseUrl = @"https://maps.googleapis.com/maps/api/distancematrix/";
@@ -20,6 +21,12 @@ namespace GoogleDistanceMatrix.Clients
             cache = new Dictionary<string, DistanceMatrixResponse>();
         }
 
+        /// <summary>
+        /// Gets the distance between origin and destination
+        /// </summary>
+        /// <param name="origin">The place of origin</param>
+        /// <param name="destination">The place of destination</param>
+        /// <returns>Distance in meters</returns>
         public int GetDistanceBetweenPlaces(string origin, string destination)
         {
             var parameters = new RequestParameters()
@@ -39,6 +46,12 @@ namespace GoogleDistanceMatrix.Clients
             }
         }
 
+        /// <summary>
+        /// Gets the duration in seconds of the journey between origin and destination.
+        /// </summary>
+        /// <param name="origin">The place of origin</param>
+        /// <param name="destination">The place of destination</param>
+        /// <returns>Duration in seconds</returns>
         public int GetDurationBetweenPlaces(string origin, string destination)
         {
             var parameters = new RequestParameters()
