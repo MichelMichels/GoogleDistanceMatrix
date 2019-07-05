@@ -5,7 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
+    <Folder Include="Libraries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestSharp" Version="106.6.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="RestApiWrapper">
+      <HintPath>Libraries\RestApiWrapper.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
