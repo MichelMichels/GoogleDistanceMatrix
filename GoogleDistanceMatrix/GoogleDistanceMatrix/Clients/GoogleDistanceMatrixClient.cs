@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using GoogleDistanceMatrix.Entities;
 using GoogleDistanceMatrix.Enums;
-using RestApiWrapper.Core;
 using RestSharp;
+using SimpleRestSharp.Core;
 
 namespace GoogleDistanceMatrix.Clients
 {
 
-    public class GoogleDistanceMatrixClient : RestApiClient
+    public class GoogleDistanceMatrixClient : SimpleRestClient
     {
         private const string baseUrl = @"https://maps.googleapis.com/maps/api/distancematrix/";
         private Dictionary<string, DistanceMatrixResponse> cache;
@@ -82,9 +82,9 @@ namespace GoogleDistanceMatrix.Clients
             } else
             {
                 var request = GetRequest(url, Method.GET);
-                var response = GetResponse<DistanceMatrixResponse>(request).Data;
-                cache.Add(url, response);
-                return response;
+                var response = GetResponse<DistanceMatrixResponse>(request);                
+                cache.Add(url, response.Data);
+                return response.Data;
             }
         }
 

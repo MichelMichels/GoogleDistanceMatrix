@@ -1,8 +1,5 @@
 ﻿using RestSharp.Deserializers;
-using RestSharp.Serializers;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace GoogleDistanceMatrix.Entities
 {

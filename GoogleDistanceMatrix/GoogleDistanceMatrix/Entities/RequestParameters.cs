@@ -3,7 +3,6 @@ using GoogleDistanceMatrix.Exceptions;
 using GoogleDistanceMatrix.Extensions;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace GoogleDistanceMatrix.Entities
 {

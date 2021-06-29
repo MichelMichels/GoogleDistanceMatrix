@@ -2,20 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Libraries\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="RestSharp" Version="106.6.10" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="RestApiWrapper">
-      <HintPath>Libraries\RestApiWrapper.dll</HintPath>
-    </Reference>
+    <PackageReference Include="SimpleRestSharp" Version="1.1.1" />
   </ItemGroup>
 
 </Project>

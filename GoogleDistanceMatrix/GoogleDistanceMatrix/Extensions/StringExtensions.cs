@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoogleDistanceMatrix.Extensions
+﻿namespace GoogleDistanceMatrix.Extensions
 {
     public static class StringExtensions
     {
