@@ -9,7 +9,7 @@ using SimpleRestSharp.Core;
 namespace GoogleDistanceMatrix.Clients
 {
 
-    public class GoogleDistanceMatrixClient : SimpleRestClient
+    public class GoogleDistanceMatrixClient : SimpleRestClient, IGoogleDistanceMatrixClient
     {
         private const string baseUrl = @"https://maps.googleapis.com/maps/api/distancematrix/";
         private Dictionary<string, DistanceMatrixResponse> cache;
@@ -37,10 +37,11 @@ namespace GoogleDistanceMatrix.Clients
             };
 
             var response = GetDistanceMatrixReponse(parameters, OutputFormat.JSON);
-            if(response.Rows.Count > 0)
+            if (response.Rows.Count > 0)
             {
                 return response.Rows.First().Elements.First().Distance.Value;
-            } else
+            }
+            else
             {
                 return 0;
             }
@@ -76,13 +77,14 @@ namespace GoogleDistanceMatrix.Clients
         {
             var format = GetOutputFormatString(outputFormat);
             var url = $"{format}?{parameters.ToString()}";
-            if(cache.ContainsKey(url))
+            if (cache.ContainsKey(url))
             {
                 return cache[url];
-            } else
+            }
+            else
             {
                 var request = GetRequest(url, Method.GET);
-                var response = GetResponse<DistanceMatrixResponse>(request);                
+                var response = GetResponse<DistanceMatrixResponse>(request);
                 cache.Add(url, response.Data);
                 return response.Data;
             }
