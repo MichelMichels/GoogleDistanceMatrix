@@ -47,6 +47,12 @@ This repository contains 2 projects:
 
 ### Usage
 
+Create an instance of `DistanceMatrixClient`:
+
+```csharp
+DistanceMatrixClient client = new("{YOUR-API-KEY}");
+```
+
 Following methods are available and are self-explanatory:
 
 ```csharp
