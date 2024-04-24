@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Authors>Michel Michels</Authors>
+    <ImplicitUsings>true</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Title>GoogleDistanceMatrix</Title>
+    <Description>C# wrapper for the goiban-service</Description>
+    <PackageProjectUrl>https://github.com/MichelMichels/GoogleDistanceMatrix</PackageProjectUrl>
+    <PackageTags>google distancematrix wrapper client</PackageTags>
+    <RepositoryUrl>https://github.com/MichelMichels/GoogleDistanceMatrix</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>2.0.0</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>
